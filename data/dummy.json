@@ -1,0 +1,22 @@
+{
+    "Weapon": [
+        {
+	    "Name": "Gun",
+	    "Damage": 15
+	},
+	{
+	    "Name": "Stone",
+	    "Damage": 5
+	}
+    ],
+    "Aid": [
+        {
+	    "Name": "Bandaid",
+	    "Healing": 5
+	},
+        {
+	    "Name": "Painkillers",
+	    "Healing": 15
+	}
+    ]
+}
