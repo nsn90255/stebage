@@ -1,1 +1,3 @@
 # Stebage
+## Dependencies
+- cJSON
