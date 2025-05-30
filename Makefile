@@ -5,7 +5,7 @@ all: stebage
 
 stebage: ${SRC}
 
-	gcc -o stebage ${SRC}  
+	gcc -o stebage ${SRC} -Wall -Werror
 
 clean: ${BIN}
 	
