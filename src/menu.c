@@ -2,6 +2,7 @@
 #include <string.h>
 #include <cjson/cJSON.h>
 #include "menu.h"
+#include "clearLines.h"
 char menu(char startInput) {
     // get menu file
     FILE *menufp = fopen("data/structure/menu.json", "r");
