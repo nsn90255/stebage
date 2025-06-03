@@ -1,10 +1,10 @@
 [
     {
-	"Name": "StartQuestion",
-	"Value": "Start game? (Y/n) : "
-    },
-    {
 	"Name": "VersionInfo",
 	"Value": "pre-alpha"
+    },
+    {
+	"Name": "StartQuestion",
+	"Value": "Start game? (Y/n) : "
     }
 ]
