@@ -54,6 +54,7 @@ char menu(char startInput) {
     }
     // clear terminal and return the user input
     clearLines(linesPrinted);
+    cJSON_Delete(menuJson);
     return startInput;
 }
 int main(int argc, char *argv[]) {
