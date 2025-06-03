@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <string.h>
 #include <cjson/cJSON.h>
 
-int menu() {
+char menu(char startInput) {
     // get menu file
     FILE *menufp = fopen("data/structure/menu.json", "r");
     if (menufp == NULL) {
@@ -24,15 +25,24 @@ int menu() {
         cJSON *item = cJSON_GetArrayItem(menuJson, i);
         cJSON *name = cJSON_GetObjectItem(item, "Name");
         cJSON *value = cJSON_GetObjectItem(item, "Value");
-
-        if (cJSON_IsString(name) && cJSON_IsString(value)) {
+	// print menu items, get input for starting question
+        if (cJSON_IsString(name) && cJSON_IsString(value) && strcmp(name->valuestring, "StartQuestion") == 0) {
+            printf("%s", value->valuestring);
+	    scanf("%c", &startInput);
+        } else if (cJSON_IsString(name) && cJSON_IsString(value)) {
             printf("%s\n", value->valuestring);
         } 
     }
-    return 0;
+    return startInput;
 }
 int main(int argc, char *argv[]) {
     // get menu
-    menu();
+    char startInput = 'n';
+    startInput = menu(startInput);
+    if (startInput == 'Y' || startInput == 'y' || startInput == '\n') {
+	printf("starting game\n");
+    } else {
+	printf("quitting game\n");
+    }
     return 0;
 }
