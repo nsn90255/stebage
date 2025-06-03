@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Wall -Werror
 LDFLAGS = -lcjson
-SRC = src/stebage.c
+SRC = src/stebage.c src/menu.c
 BIN = stebage
 
 all: stebage
