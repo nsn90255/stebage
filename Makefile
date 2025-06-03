@@ -1,3 +1,4 @@
+.PHONY: all clean
 CC = gcc
 CFLAGS = -Wall -Werror
 LDFLAGS = -lcjson
@@ -10,6 +11,6 @@ stebage: ${SRC}
 
 	${CC} -o ${BIN} ${SRC} ${CFLAGS} ${LDFLAGS}
 
-clean: ${BIN}
+clean:
 	
 	rm ${BIN}
