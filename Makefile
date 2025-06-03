@@ -1,3 +1,6 @@
+CC = gcc
+CFLAGS = -Wall -Werror
+LDFLAGS = -lcjson
 SRC = src/stebage.c
 BIN = stebage
 
@@ -5,7 +8,7 @@ all: stebage
 
 stebage: ${SRC}
 
-	gcc -o stebage ${SRC} -Wall -Werror
+	${CC} -o ${BIN} ${SRC} ${CFLAGS} ${LDFLAGS}
 
 clean: ${BIN}
 	
