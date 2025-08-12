@@ -15,6 +15,7 @@
 #ifndef MENU_H
 #define MENU_H
 
+// returns whether the user typed 'Y', 'y', or '\n'
 char menu(char startInput);
 
 #endif
