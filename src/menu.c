@@ -36,7 +36,8 @@ char menu(char startInput) {
     cJSON *menuJson = cJSON_Parse(menuContents);
     // return if the menu is a null pointer
     if (menuJson == NULL) {
-	printf("Error parsing menu.json\n");
+	fprintf(stderr, "Error parsing menu.json : ");
+	perror("");
 	return 1;
     }
     // get size of the array
