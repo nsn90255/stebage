@@ -15,7 +15,6 @@
 #include <stdio.h>
 #include <string.h>
 #include <cjson/cJSON.h>
-#include "menu.h"
 #include "clearLines.h"
 char menu(char startInput) {
     // get menu file
