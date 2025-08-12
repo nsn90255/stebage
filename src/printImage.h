@@ -12,22 +12,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
-#include <stdio.h>
-#include <string.h>
-#include <cjson/cJSON.h>
-#include "menu.h"
-#include "printImage.h"
-int main(int argc, char *argv[]) {
-    // get menu
-    char startInput = 'n';
-    startInput = menu(startInput);
-    // start game if the user so desires
-    if (startInput == 'Y' || startInput == 'y' || startInput == '\n') {
-	printf("starting game\n");
-	const char *imageToPrintFirst = "mage";
-	printImage(imageToPrintFirst);
-    } else {
-	printf("quitting game\n");
-    }
-    return 0;
-}
+#ifndef PRINTIMAGE_H
+#define PRINTIMAGE_H
+
+int printImage(const char *imageToPrint);
+
+#endif

@@ -14,20 +14,22 @@
  */
 #include <stdio.h>
 #include <string.h>
-#include <cjson/cJSON.h>
-#include "menu.h"
-#include "printImage.h"
-int main(int argc, char *argv[]) {
-    // get menu
-    char startInput = 'n';
-    startInput = menu(startInput);
-    // start game if the user so desires
-    if (startInput == 'Y' || startInput == 'y' || startInput == '\n') {
-	printf("starting game\n");
-	const char *imageToPrintFirst = "mage";
-	printImage(imageToPrintFirst);
-    } else {
-	printf("quitting game\n");
+int printImage(const char *imageToPrint) {
+    // dir with images
+    const char *imageDir = "data/images/";
+    char fullImagePath[256];
+
+    snprintf(fullImagePath, sizeof(fullImagePath), "%s%s", imageDir, imageToPrint);
+    FILE *fptr = fopen(fullImagePath, "r");  
+    if (fptr == NULL) {  
+	fprintf(stderr, "Error opening file for %s. : ", fullImagePath);
+	perror("");
+        return 1;  
     }
+    char ch;
+    while ((ch = fgetc(fptr)) != EOF) {
+        putchar(ch);
+    }
+    fclose(fptr);  
     return 0;
 }
