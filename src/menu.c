@@ -16,7 +16,11 @@
 #include <string.h>
 #include <cjson/cJSON.h>
 #include "clearLines.h"
+#include "printImage.h"
 char menu(char startInput) {
+    // print menu image
+    const char *imageToPrint = "menu";
+    int linesInMenu = printImage(imageToPrint);
     // get menu file
     FILE *menufp = fopen("data/structure/menu.json", "r");
     // return if there's a problem opening the file
@@ -61,6 +65,7 @@ char menu(char startInput) {
         } 
     }
     // clear terminal and return the user input
+    linesPrinted += linesInMenu;
     clearLines(linesPrinted);
     cJSON_Delete(menuJson);
     return startInput;
