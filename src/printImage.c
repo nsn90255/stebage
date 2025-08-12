@@ -27,9 +27,13 @@ int printImage(const char *imageToPrint) {
         return 1;  
     }
     char ch;
+    int linesPrintedForImage = 0;
     while ((ch = fgetc(fptr)) != EOF) {
+	if (ch == '\n') {
+	    linesPrintedForImage++;
+	}
         putchar(ch);
     }
     fclose(fptr);  
-    return 0;
+    return linesPrintedForImage;
 }

@@ -15,6 +15,7 @@
 #ifndef PRINTIMAGE_H
 #define PRINTIMAGE_H
 
+// this returns the number of lines printed
 int printImage(const char *imageToPrint);
 
 #endif
