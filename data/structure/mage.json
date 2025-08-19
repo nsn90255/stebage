@@ -4,6 +4,9 @@
 	"Value": "Hallo traveler"
     },
     {
+	"Name": "Image",
+	"Value": "data/images/mage"
+    {
 	"Name": "Weapon",
 	"Value": "Fireball"
     }
